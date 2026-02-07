@@ -2,41 +2,37 @@ const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-
-  const pages = [];
   const blogPost = path.resolve("./src/templates/blog-post.js");
 
-  return graphql(
-    `
-      {
-        allMarkdownRemark(limit: 1000) {
-          edges {
-            node {
-              fields {
-                slug
-              }
+  const result = await graphql(`
+    {
+      allMarkdownRemark(limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
             }
           }
         }
       }
-    `
-  ).then(result => {
-    if (result.errors) {
-      console.error(result.errors);
-      reject(result.errors);
     }
+  `);
 
-    // Create blog posts pages.
-    _.each(result.data.allMarkdownRemark.edges, edge => {
-      createPage({
-        path: edge.node.fields.slug,
-        component: blogPost,
-        context: {
-          slug: edge.node.fields.slug
-        }
-      });
+  if (result.errors) {
+    console.error(result.errors);
+    throw result.errors;
+  }
+
+  // Create blog posts pages.
+  _.each(result.data.allMarkdownRemark.edges, edge => {
+    createPage({
+      path: edge.node.fields.slug,
+      component: blogPost,
+      context: {
+        slug: edge.node.fields.slug
+      }
     });
   });
 };

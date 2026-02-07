@@ -12,20 +12,6 @@ const Bio = props => {
 
   return (
     <div className="blog-description site-bio">
-      <div className="weixin">
-        <h3 className="side-title">微信 · · · · · · </h3>
-        <div className="wx-qr-code" />
-        <p>扫一扫，关注我！</p>
-      </div>
-
-      <div className="bio">
-        <h3 className="side-title">关于 · · · · · · </h3>
-        <p
-          className="bio-content"
-          dangerouslySetInnerHTML={{ __html: siteBio }}
-        />
-      </div>
-
       <div className="author">
         <h3 className="side-title">作者 · · · · · · </h3>
         <div className="author-pic" />
