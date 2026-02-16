@@ -4,7 +4,7 @@ const Header = props => (
   <header className="site-header">
     <div className="nav-primary">
       <div className="nav-logo">
-        <a href="/">第36个故事</a>
+        <a href="/">日常</a>
       </div>
 
       <div className="nav-items">

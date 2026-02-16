@@ -234,18 +234,15 @@ table tr {
   margin: 0 auto;
 }
 .nav-logo {
-  margin: 25px 0;
-  width: 150px;
-  height: 30px;
+  margin: 19px 0;
+  height: 40px;
   float: left;
-  background-image: url("../images/istory36-title.png");
-  background-size: 150px 30px;
+  background-image: url("../images/blog_logo.png");
+  background-size: cover;
 }
 .nav-logo a {
   display: block;
-  width: 150px;
-  height: 30px;
-  line-height: 100em;
+  width: 66px;
   color: rgba(0, 0, 0, 0);
 }
 .nav-items {
@@ -335,16 +332,6 @@ table tr {
   line-height: 150%;
 }
 
-.wx-qr-code {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 12px;
-  border-radius: 6px;
-  background-image: url("../images/qrcode.jpg");
-  background-size: 200px 200px;
-  border: 1px solid #ddd;
-  background-repeat: no-repeat;
-}
 .author-pic {
   width: 140px;
   height: 140px;
