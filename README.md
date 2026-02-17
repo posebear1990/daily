@@ -85,6 +85,12 @@ npm run clean
 ./deploy.sh
 ```
 
+## Cloudflare Web Analytics
+
+1. 复制 `.env.example` 为 `.env`。
+2. 配置 `CLOUDFLARE_WEB_ANALYTICS_TOKEN` 为对应站点的 Cloudflare token。
+3. 重新执行 `npm run build`（或重启开发服务）使埋点生效。
+
 ## License
 
 MIT
