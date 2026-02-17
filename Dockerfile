@@ -8,7 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # 安装依赖
-RUN npm ci --legacy-peer-deps
+RUN npm config set registry https://registry.npmjs.org/ \
+  && npm ci --legacy-peer-deps --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=120000
 
 # 复制源代码
 COPY . .
