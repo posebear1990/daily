@@ -30,6 +30,7 @@ fi
 VPS_HOST="47.79.42.231"
 VPS_USER="root"
 REMOTE_DIR="/opt/daily-blog"
+SITE_URL="${SITE_URL:-https://daily.xiaoxiong.app/}"
 LOCAL_DIR="${PROJECT_DIR}"
 
 echo "🛠️ 1. 本地构建静态文件..."
@@ -70,7 +71,7 @@ docker-compose up -d --force-recreate
 docker image prune -f
 
 echo "✅ 部署完成！"
-echo "🌐 访问地址: http://47.79.42.231:8081"
 ENDSSH
 
 echo "🎉 部署成功完成！"
+echo "🌐 访问地址: ${SITE_URL}"

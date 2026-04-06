@@ -1,95 +1,45 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-import get from "lodash/get";
-import Layout from "../components/Layout";
-import Bio from "../components/Bio";
+import { Link } from "gatsby";
+import { Helmet } from "react-helmet";
 
-class BlogIndex extends React.Component {
-  render() {
-    const siteTitle = get(this, "props.data.site.siteMetadata.title");
-    const siteAuthor = get(this, "props.data.site.siteMetadata.author");
-    const siteData = get(this, "props.data.site.siteMetadata");
-    const posts = get(this, "props.data.allMarkdownRemark.edges");
+const HomePage = () => {
+  return (
+    <>
+      <Helmet>
+        <title>Xiaoxiong Daily</title>
+        <link rel="stylesheet" href="/xiaoxiaoxiaoxiong-home/asset/styles/index.css" />
+        <script src="/xiaoxiaoxiaoxiong-home/lib/jquery.min.js" />
+        <script src="/xiaoxiaoxiaoxiong-home/lib/jquery-canvas-sparkles.js" />
+        <script src="/xiaoxiaoxiaoxiong-home/src/sparkle.js" />
+      </Helmet>
 
-    return (
-      <Layout title={siteTitle}>
-        <ol className="post-list">
-          {posts.map(post => {
-            if (post.node.path !== "/404/") {
-              const title =
-                get(post, "node.frontmatter.title") || post.node.path;
+      <div className="star-background" />
+      <div className="content">
+        <Link to="/blog/" className="logo-link" title="Enter Daily Blog">
+          <img
+            src="/xiaoxiaoxiaoxiong-home/asset/images/Nichijou_logo.svg"
+            alt="Nichijou Logo"
+            className="logo"
+          />
+        </Link>
 
-              return (
-                <li key={post.node.fields.slug} className="post-stub post">
-                  <h4 className="post-stub-title">
-                    <Link className="js-ajax-link" to={post.node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h4>
-                  <span className="post-copyright">
-                    {post.node.fields.copyright || "原创"}
-                  </span>
-                  <span className="post-author-name">
-                    {post.node.fields.author || siteAuthor || "Xiaoxiong"}
-                  </span>
-                  <time
-                    className="post-stub-date"
-                    dateTime={post.node.frontmatter.date}>
-                    {post.node.frontmatter.date}
-                  </time>
-                  <p className="post-previous">
-                    {post.node.excerpt}
-                    <Link className="post-read-more" to={post.node.fields.slug}>
-                      阅读全文
-                    </Link>
-                  </p>
-                </li>
-              );
-            }
-            return null;
-          })}
-        </ol>
-        <Bio data={siteData} />
-      </Layout>
-    );
-  }
-}
+        <div className="footer">Xiaoxiong Daily</div>
+        <div className="player">
+          <iframe
+            className="netease-music"
+            frameBorder="no"
+            border="0"
+            marginWidth="0"
+            marginHeight="0"
+            width="280"
+            height="52"
+            src="https://music.163.com/outchain/player?type=2&id=651241&auto=0&height=32"
+            title="Netease Music"
+          />
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default BlogIndex;
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-        author
-        blogUrl
-        authorPic
-        linkPrefix
-        weibo_url
-        zhihu_url
-        douban_url
-        github_url
-        siteBio
-        authorBio
-      }
-    }
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/post/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt(format: PLAIN, pruneLength: 75, truncate: true)
-          frontmatter {
-            date(formatString: "YYYY-MM-DD hh:mm")
-            title
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`;
+export default HomePage;

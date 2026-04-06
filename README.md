@@ -6,6 +6,16 @@
 
 这是一个简洁的个人博客系统，用于记录日常生活、技术笔记和个人想法。
 
+当前站点结构：
+
+- `/`：`xiaoxiaoxiaoxiong` 风格主页（已并入本仓库维护）
+- `/blog/`：Daily 博客文章列表入口
+
+旧仓库归档说明：
+
+- 已在本仓库保留完整归档：`legacy/xiaoxiaoxiaoxiong/`（不含 `.git` 与 `.env`）
+- 可运行主页资源位于：`static/xiaoxiaoxiaoxiong-home/`
+
 ## 技术栈
 
 - **前端框架**: Gatsby (React)
@@ -58,7 +68,7 @@ npm run build
 daily/
 ├── src/              # 源代码目录
 ├── content/          # 博客内容（Markdown 文件）
-├── static/           # 静态资源
+├── static/           # 静态资源（含 xiaoxiaoxiaoxiong-home）
 ├── Dockerfile        # Docker 镜像构建文件
 ├── docker-compose.yml # Docker Compose 配置
 ├── nginx.conf        # Nginx 配置
