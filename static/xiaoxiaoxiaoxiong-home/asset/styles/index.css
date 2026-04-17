@@ -30,16 +30,6 @@ body {
   height: auto;
   display: block;
 }
-.footer {
-  position: absolute;
-  bottom: 20px;
-  text-align: center;
-  width: 100%;
-  color: #ccc;
-}
-.footer > a {
-  color: #ccc;
-}
 .player {
   width: 25px;
   height: 25px;

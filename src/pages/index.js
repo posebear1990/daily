@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { Helmet } from "react-helmet";
 
 const HomePage = () => {
@@ -15,15 +14,14 @@ const HomePage = () => {
 
       <div className="star-background" />
       <div className="content">
-        <Link to="/blog/" className="logo-link" title="Enter Daily Blog">
+        <a href="/blog/" className="logo-link" title="Enter Daily Blog">
           <img
             src="/xiaoxiaoxiaoxiong-home/asset/images/Nichijou_logo.svg"
             alt="Nichijou Logo"
             className="logo"
           />
-        </Link>
+        </a>
 
-        <div className="footer">Xiaoxiong Daily</div>
         <div className="player">
           <iframe
             className="netease-music"
