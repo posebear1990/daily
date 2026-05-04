@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Xiaoxiong 日常",
     author: "Xiaoxiong",
-    blogUrl: "http://nichijou.xiaoxiaoxiaoxiong.com",
+    blogUrl: "https://daily.xiaoxiong.app",
     authorPic: "avatar.jpg",
     linkPrefix: "/istory36",
     weibo_url: "http://weibo.com/posebear1990",

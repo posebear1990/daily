@@ -15,8 +15,7 @@ React Hooks 出来这么久了，一直没用过，刚好有需要一个简单�
 开发好的组件我上传到了 github，如果有学习需要的同学，欢迎自取：
 [https://github.com/posebear1990/react-simple-component-calendar](https://github.com/posebear1990/react-simple-component-calendar)
 
-最终 demo 在这里可以看到，可以看到是个很简单的日历组件：
-[http://demo.xiaoxiaoxiaoxiong.com/react-simple-component-calendar](http://demo.xiaoxiaoxiaoxiong.com/react-simple-component-calendar/)
+最终 demo 当时有单独部署过，不过公开演示链接现在已经下线了。
 
 开发起来也并不难，但是思路却是开发一般的 React 组件的通用思路，所以简单介绍一下开发思路，并且记录一下从设计到发布到 npm 的全过程。
 

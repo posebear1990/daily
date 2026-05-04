@@ -6,17 +6,17 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Xiaoxiong Daily</title>
-        <link rel="stylesheet" href="/xiaoxiaoxiaoxiong-home/asset/styles/index.css" />
-        <script src="/xiaoxiaoxiaoxiong-home/lib/jquery.min.js" />
-        <script src="/xiaoxiaoxiaoxiong-home/lib/jquery-canvas-sparkles.js" />
-        <script src="/xiaoxiaoxiaoxiong-home/src/sparkle.js" />
+        <link rel="stylesheet" href="/legacy-home/asset/styles/index.css" />
+        <script src="/legacy-home/lib/jquery.min.js" />
+        <script src="/legacy-home/lib/jquery-canvas-sparkles.js" />
+        <script src="/legacy-home/src/sparkle.js" />
       </Helmet>
 
       <div className="star-background" />
       <div className="content">
         <a href="/blog/" className="logo-link" title="Enter Daily Blog">
           <img
-            src="/xiaoxiaoxiaoxiong-home/asset/images/Nichijou_logo.svg"
+            src="/legacy-home/asset/images/Nichijou_logo.svg"
             alt="Nichijou Logo"
             className="logo"
           />

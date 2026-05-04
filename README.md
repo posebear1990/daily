@@ -8,13 +8,13 @@
 
 当前站点结构：
 
-- `/`：`xiaoxiaoxiaoxiong` 风格主页（已并入本仓库维护）
+- `/`：旧主页风格页面（已并入本仓库维护）
 - `/blog/`：Daily 博客文章列表入口
 
-旧仓库归档说明：
+旧主页资源说明：
 
-- 已在本仓库保留完整归档：`legacy/xiaoxiaoxiaoxiong/`（不含 `.git` 与 `.env`）
-- 可运行主页资源位于：`static/xiaoxiaoxiaoxiong-home/`
+- 可运行主页资源位于：`static/legacy-home/`
+- 原独立主页仓库已退役，`daily` 里不再保留单独归档副本
 
 ## 技术栈
 
@@ -68,7 +68,7 @@ npm run build
 daily/
 ├── src/              # 源代码目录
 ├── content/          # 博客内容（Markdown 文件）
-├── static/           # 静态资源（含 xiaoxiaoxiaoxiong-home）
+├── static/           # 静态资源（含 legacy-home）
 ├── Dockerfile        # Docker 镜像构建文件
 ├── docker-compose.yml # Docker Compose 配置
 ├── nginx.conf        # Nginx 配置

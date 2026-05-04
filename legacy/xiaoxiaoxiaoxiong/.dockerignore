@@ -1,8 +1,0 @@
-.git
-.gitignore
-.DS_Store
-README.md
-DEPLOY.md
-deploy.sh
-server.js
-node_modules
