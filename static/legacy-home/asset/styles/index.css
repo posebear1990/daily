@@ -42,8 +42,8 @@ body {
 }
 .player .netease-music {
   position: absolute;
-  right: -14px;
-  top: -14px;
+  right: -18px;
+  top: -16px;
   width: 120px;
   height: 100px;
 }

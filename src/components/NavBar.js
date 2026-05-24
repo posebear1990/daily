@@ -37,7 +37,7 @@ const NavItem = ({ linkTo, children }) => (
 export default () => {
   return (
     <Nav>
-      <NavItem linkTo="/">Home</NavItem>
+      <NavItem linkTo="/blog/">Home</NavItem>
       <NavItem linkTo="/about">About</NavItem>
     </Nav>
   );
