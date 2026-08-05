@@ -27,7 +27,7 @@ if [[ -z "${CLOUDFLARE_WEB_ANALYTICS_TOKEN:-}" || "${CLOUDFLARE_WEB_ANALYTICS_TO
 fi
 
 # 配置变量
-VPS_HOST="47.79.42.231"
+VPS_HOST="website-vps.xiaoxiong.app"
 VPS_USER="root"
 REMOTE_DIR="/opt/daily-blog"
 SITE_URL="${SITE_URL:-https://daily.xiaoxiong.app/}"
