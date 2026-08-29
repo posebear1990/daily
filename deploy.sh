@@ -11,25 +11,21 @@ PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ENV_FILE="${PROJECT_DIR}/.env"
 ENV_EXAMPLE_FILE="${PROJECT_DIR}/.env.example"
 
-if [[ ! -f "${ENV_FILE}" ]]; then
-  cp "${ENV_EXAMPLE_FILE}" "${ENV_FILE}"
-  echo "[ERROR] 未找到 .env，已从 .env.example 创建。请填入 token 后重试。" >&2
-  exit 1
+if [[ -f "${ENV_FILE}" ]]; then
+  set -a
+  source "${ENV_FILE}"
+  set +a
 fi
 
-set -a
-source "${ENV_FILE}"
-set +a
-
 if [[ -z "${CLOUDFLARE_WEB_ANALYTICS_TOKEN:-}" || "${CLOUDFLARE_WEB_ANALYTICS_TOKEN}" == "REPLACE_WITH_CF_WEB_ANALYTICS_TOKEN" ]]; then
-  echo "[ERROR] 请先在 .env 设置 CLOUDFLARE_WEB_ANALYTICS_TOKEN。" >&2
+  echo "[ERROR] 请在 .env 设置 CLOUDFLARE_WEB_ANALYTICS_TOKEN 或通过环境变量注入。" >&2
   exit 1
 fi
 
 # 配置变量
-VPS_HOST="website-vps.xiaoxiong.app"
-VPS_USER="root"
-REMOTE_DIR="/opt/daily-blog"
+VPS_HOST="${VPS_HOST:-website-vps.xiaoxiong.app}"
+VPS_USER="${VPS_USER:-root}"
+REMOTE_DIR="${REMOTE_DIR:-/opt/daily-blog}"
 SITE_URL="${SITE_URL:-https://daily.xiaoxiong.app/}"
 LOCAL_DIR="${PROJECT_DIR}"
 

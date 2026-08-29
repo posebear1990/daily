@@ -2,9 +2,16 @@
 
 ## 部署方式
 
-### 方式一：一键部署（推荐）
+### 方式一：集中加密部署（推荐，基于 bear-den & SOPS）
 
 ```bash
+sops exec-env /path/to/bear-den/apps/daily.enc.env ./deploy.sh
+```
+
+### 方式二：本地单项目一键部署
+
+```bash
+# 需准备本地 .env (含 CLOUDFLARE_WEB_ANALYTICS_TOKEN)
 ./deploy.sh
 ```
 
@@ -14,7 +21,7 @@
 3. 在 VPS 上构建 Docker 镜像
 4. 启动容器
 
-### 方式二：手动部署
+### 方式三：手动部署
 
 #### 1. 上传文件到 VPS
 
